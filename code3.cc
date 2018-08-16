@@ -42,7 +42,7 @@ void _sendFile(int clientSocket) {
 
 	fprintf(stdout, "Sending: %s\n", fileName);
 
-	char fileChar = 0;
+	int fileChar = 0;
 	int i = 0;
 	bzero(buffer, BUFF_SIZE);
 	while (((fileChar = fgetc(fp)) != EOF) && (i < BUF_SIZE)) {
