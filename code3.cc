@@ -18,8 +18,8 @@ static size_t strlcpy(char * dst, const char * src, size_t dsize);
 static size_t	strlcat(char *dst, const char *src, size_t siz);
 
 void _sendFile(int clientSocket) {
-	char buffer[BUFF_SIZE] = { '\0' };
-	bzero(buffer, BUFF_SIZE);
+	char buffer[BUFF_SIZE+1] = { '\0' };
+	bzero(buffer, sizeof(buffer)); // enforce null-termination
 
 	int readStatus = read(clientSocket, buffer, BUFF_SIZE);
 	if (readStatus < 0) {
