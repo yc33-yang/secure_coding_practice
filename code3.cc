@@ -51,8 +51,8 @@ void _sendFile(int clientSocket) {
 	safe_fclose(fp);
 
 	// Temporary header handling - only text/HTML at the moment.
-	char header[BUFF_SIZE]		  = "HTTP/1.1 200 OK\r\n";
-	char contentType[BUFF_SIZE]   = "Content-Type: text/html; charset=UTF-8\r\n";
+	char header[] = "HTTP/1.1 200 OK\r\n";
+	char contentType[] = "Content-Type: text/html; charset=UTF-8\r\n";
 	char contentLength[BUFF_SIZE] = { '\0' };
 	ary_snprintf(contentLength, "Content-Length: %zu\r\n", strlen(buffer) + 1);
 
