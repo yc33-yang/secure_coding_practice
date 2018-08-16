@@ -28,7 +28,7 @@ void _sendFile(int clientSocket) {
 	char fileName[BUFF_SIZE + 1] = { '\0' };
 	// int sscanf ( const char * s, const char * format, ...);
 	// Reads data from s and stores them according to parameter format into the locations given by the additional argument
-	sscanf(buffer, "GET /" STR(s)  "%s", fileName);
+	sscanf(buffer, "GET /%" STR(s)  "s", fileName);
 
 	// Handle file request.
 	FILE* fp = fopen(fileName, "rb");
