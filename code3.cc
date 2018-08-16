@@ -7,9 +7,12 @@
 #define ary_snprintf(s, ...) _snprintf(s, sizeof(s), __VA_ARGS__)
 #define safe_fclose(fp) do { if (fp) { fclose(fp); fp = NULL; } } while(0)
 
-#define _STR(s) #s
-#define STR(s) _STR(s)
-#define BUFF_SIZE 1024
+#define __STR(s) #s
+#define _STR(s) __STR(s)
+#define STR(s) _STR(s) // looks aguly but safe for evalution (e.g. 1024+500 --> "1524")
+
+#define BUFF_SIZE 1024+100
+
 
 static size_t strlcpy(char * dst, const char * src, size_t dsize);
 static size_t	strlcat(char *dst, const char *src, size_t siz);
