@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	char open_file_command[100] = { 0, };
 	pevent_t *event = nullptr;
 
-	if (argc <= 2) {
+	if (argc <= 1) {
 		printf("usage: %s input [options] output\n", argv[0]);
 		return 1;
 	}
