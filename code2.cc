@@ -14,7 +14,9 @@ int main(int argc, char *argv[])
 	pevent_t *event = nullptr;
 
 	if (argc <= 1) {
-		printf("usage: %s input [options] output\n", argv[0]);
+		printf("usage: %s input [output]\n", 
+                       "          default output file name : <input>.html\n",
+		       argv[0]);
 		return 1;
 	}
 	/* opnen the file */
