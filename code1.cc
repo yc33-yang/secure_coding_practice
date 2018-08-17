@@ -3,12 +3,14 @@
 #include<string.h>
 
 
-template <class T, size_t n>
-void strswap(T(&str1)[n], T(&str2)[n]) {
-	T tem[n] = { 0, };
+template <size_t n>
+void strswap(char (&str1)[n], char (&str2)[n]) {
+	char tem[n] = { 0, };
 	strncpy(tem, str1, n);
 	strncpy(str1, str2, n);
 	strncpy(str2, tem, n);
+	if (n > 0) 
+	  str1[n-1] = str2[n-1] = 0;
 }
 
 int main(int argc, char *argv[])
